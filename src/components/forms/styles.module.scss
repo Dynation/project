@@ -1,0 +1,156 @@
+$main-color: #3ea9f5;
+$action-color:#28d2d0;
+
+.formbody {
+	position: relative;
+	display: grid;
+	gap: 50px 30px;
+	min-height: 60vh;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-areas:
+		"logo .   . login" 
+		". header header ."
+		" . main  confirm ." 
+		". footer footer .";
+	background-color: $main-color;
+	
+    box-shadow: 1px 8px 4px rgba(110, 110, 110, 0.571),
+				-2px 8px 6px rgba(110, 110, 110, 0.571);
+    border-radius: 5px;
+    padding: 40px;
+    margin: 40px;
+		@media (max-width: 767px){
+				min-width: 100%;
+				margin:10px;
+				padding:0 40px;
+				grid-template-columns:1fr;
+				grid-template-areas:
+					"logo " 
+					"login"
+					"header"
+					"main" 
+					"confirm" 
+					" footer";
+		}
+}
+
+.header {
+	color:#fff;
+  	grid-area: header;
+	grid-column:  2/4;
+	text-align: center;
+	@media (max-width: 767px) {
+		grid-column: 1;
+		margin-top: 20px;
+	}
+}
+
+.logo {
+	justify-self: start;
+    grid-area: logo;
+	@media (max-width: 767px) {
+		grid-area: login;
+	}
+}
+
+.login{
+	justify-self: end;
+	grid-area:  login;
+}
+
+.main {
+	display:grid;
+	gap: 30px;
+	grid-area:  main;
+}
+
+.confirm {
+	display:grid;
+	gap: 30px;
+	grid-area: confirm;
+}
+
+label{
+	position: relative;
+	
+}
+ span {
+	position: absolute;	
+	padding-left: 10%;
+ }
+
+.button{
+	color:#fff;
+	width: stretch;
+	background-color: $main-color;
+	padding: 0px 30px;
+	border: #ffffff81 0.5px solid;
+	border-radius: 3px;
+	line-height: 40px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 12px;
+	text-decoration: none;
+	justify-self: center;
+}
+
+.button:hover{
+	background-color: #28d2d0;
+	border: #ffffff65 1px solid;
+	box-shadow: #ffffffb1 1px 1px 2px;
+		@media (pointer:coarse) {
+			background-color: $main-color;
+		}
+ }
+
+.button:active{
+	background-color: #0ed3d0;
+	border:$main-color 1px solid;
+ box-shadow: inset #ffffffd4 1px 1px 2px;
+ }
+
+ .footer {
+	grid-area: footer;
+	gap: 15px;
+	align-items: center;
+	padding:20px 0 ;
+	display: grid;	
+}
+
+.error {
+  top: 110%;
+  right: 5%;
+  z-index: 1;
+  padding: 3px;
+  width: stretch;
+  text-wrap: nowrap;
+  line-height: 0.8rem;
+ 
+  box-shadow:  0 0 0,
+   rgb(252, 2, 2) -2px 1px 1px;
+  color: red;
+  text-shadow:#fff 1px 1px 2px;
+  text-align: justify;
+  text-size-adjust: 120%;
+  font-size: small;
+  font-style: oblique 55deg;
+}
+
+.input {
+  padding: 15px ;
+  width: stretch;
+  text-size-adjust: 150%;
+}
+.input::placeholder {
+	color:rgb(3, 3, 120);
+	font-weight: 100;
+	font-size: larger;
+  }
+.valid {
+  background-color: aquamarine;
+}
+
+.invalid {
+  background:repeating-radial-gradient( #fff, coral , #fff 0.3%), repeating-linear-gradient( #fff, coral , #fff 0.3%);
+}
+
