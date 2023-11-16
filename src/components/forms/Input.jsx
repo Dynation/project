@@ -1,7 +1,7 @@
-import { Field } from "formik";
-import classNames from "classnames";
+import { Field } from 'formik';
+import classNames from 'classnames';
 
-function Input({ name, label, classes, ...restProps }) {
+function Input ({ name, label, classes, ...restProps }) {
   return (
     <Field name={name}>
       {({
